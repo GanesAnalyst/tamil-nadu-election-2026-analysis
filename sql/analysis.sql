@@ -6,14 +6,14 @@
 
 -- ------------------------------------------------------------
 -- 1. DATA VALIDATION
--- Check total records, constituencies and NOTA records
+-- Check total records, constituencies records
+-- ------------------------------------------------------------
 SELECT COUNT(*) AS total_candidate_records
 FROM candidate_result;
 
 -- Validate all 234 constituencies are represented
 SELECT COUNT(DISTINCT constituency_no) AS total_constituencies
 FROM candidate_result;
--- ------------------------------------------------------------
 
 -- ------------------------------------------------------------
 -- 2. WINNER BY CONSTITUENCY
@@ -24,7 +24,7 @@ select *,
 dense_rank() over(partition by constituency_no order by total_votes desc) as vote_rank
 from candidate_result
 ) as winner
-where runner_up.vote_rank = 1;
+where winner.vote_rank = 1;
 
 -- ------------------------------------------------------------
 -- 3. RUNNER-UP BY CONSTITUENCY
@@ -59,7 +59,7 @@ where runner_up_rank.vote_rank = 2
 on winner.constituency_no = runner_up.constituency_no;
 
 -- ------------------------------------------------------------
--- CREATE CONSTITUENCY SUMMARY VIEW
+-- 5.CREATE CONSTITUENCY SUMMARY VIEW
 -- Created a reusable view with one row per constituency,
 -- containing the winner, runner-up, their vote totals,
 -- winning parties, and winning margin.
@@ -219,7 +219,7 @@ select count(*) as total_no_of_consitituency
 from constituency_summary) as t2
 ) as seatsharetable
 on 
-votesharetable.party = seatsharetable.winner_party
+votesharetable.party = seatsharetable.winner_party;
 
 -- ------------------------------------------------------------
 -- 12. TURNOUT DATA VALIDATION
