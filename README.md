@@ -229,3 +229,39 @@ https://public.tableau.com/app/profile/ganesan.a7009/viz/TN_Election_2026_Result
 - **Highest Voter Turnout:** **Karur** recorded the highest voter turnout at **94.25%**.
 - **Lowest Voter Turnout:** **Palayamkottai** recorded the lowest voter turnout at **70.14%**.
 - **Vote Share vs Seat Share:** TVK received **16,990,810 votes**, representing **35.08% of the total vote share**, while winning **108 seats (46.15% of all seats)**. This indicates that TVK's share of seats was substantially higher than its share of votes.
+
+
+## Project Structure
+
+```text
+tamil-nadu-election-2026-analysis/
+│
+├── data/
+│   ├── processed/
+│   │   └── Tamil_Nadu_Election_Results_2026.xlsx
+│   └── spatial/
+│       └── tamil_nadu.geojson
+│
+├── sql/
+│   └── analysis.sql
+│
+├── images/
+│   └── tn_election_2026_dashboard.png
+│
+└── README.md
+```
+
+## Skills Demonstrated
+
+- Data extraction and transformation
+- Data cleaning and validation
+- Excel-based data preparation
+- SQL querying and analytical problem solving
+- Window functions and ranking analysis
+- Creation of reusable SQL views
+- Party-level and constituency-level electoral analysis
+- Geospatial analysis using GeoJSON
+- Tableau dashboard development
+- Interactive filters, tooltips and dashboard actions
+- Data visualization and insight communication
+- Data quality validation against source documents
