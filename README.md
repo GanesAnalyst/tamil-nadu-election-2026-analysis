@@ -112,6 +112,69 @@ Key validation steps included:
 Automated checks such as row counts and vote-total reconciliation were combined with **source-level validation against the original PDF**.
 
 This was important because structural checks alone could confirm that the dataset was internally consistent, but could not guarantee that every record had been extracted correctly from the source document.
+
+## SQL Analysis
+
+MySQL was used to transform the cleaned candidate-level data into constituency-level and party-level analytical outputs.
+
+### Winner and Runner-up Identification
+
+Window functions were used to rank candidates within each constituency based on total votes.
+
+`DENSE_RANK()` with `PARTITION BY constituency_no` was used to identify:
+
+- Constituency winner
+- Runner-up
+- Winner votes
+- Runner-up votes
+
+### Winning Margin Analysis
+
+Winning margin was calculated as:
+
+`Winner Votes - Runner-up Votes`
+
+This was used to identify:
+
+- Top 10 closest electoral contests
+- Top 10 largest victories
+
+### Constituency Summary View
+
+A reusable MySQL view named `constituency_summary` was created to provide one analytical record per constituency.
+
+The view contains:
+
+- Constituency number and name
+- Winner and winning party
+- Winner votes
+- Runner-up and runner-up party
+- Runner-up votes
+- Winning margin
+
+This view served as a reusable constituency-level analytical layer for downstream analysis and Tableau visualization.
+
+### Party-Level Analysis
+
+SQL was also used to calculate:
+
+- Seats won by each political party
+- Total votes received by each party
+- Party vote share
+- Party seat share
+- Comparison between vote share and seat share
+
+### Voter Turnout Analysis
+
+Constituency-level turnout data was analysed to identify:
+
+- Average voter turnout
+- Highest voter turnout
+- Lowest voter turnout
+- Constituencies with the highest and lowest turnout
+
+
+
 ## Tableau Dashboard
 
 The interactive Tableau dashboard provides a constituency-level view of the Tamil Nadu Assembly Election 2026 results, including winning parties, voter turnout, winning margins, seat distribution, and vote share versus seat share.
