@@ -14,3 +14,9 @@ The objective was to transform official election data into a structured analytic
 - **Tableau Public** — Data visualization and interactive dashboard
 - **GeoJSON** — Constituency-level spatial visualization
 - **AI-assisted extraction** — Converting the official election-results PDF into structured tabular data
+
+## Tableau Dashboard
+
+The interactive Tableau dashboard provides a constituency-level view of the Tamil Nadu Assembly Election 2026 results, including winning parties, voter turnout, winning margins, seat distribution, and vote share versus seat share.
+
+![Tamil Nadu Assembly Election 2026 Dashboard](images/tn_election_2026_dashboard.png)
