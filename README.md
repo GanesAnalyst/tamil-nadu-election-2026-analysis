@@ -216,3 +216,16 @@ The dashboard includes:
 
 [View the Interactive Tableau Dashboard]
 https://public.tableau.com/app/profile/ganesan.a7009/viz/TN_Election_2026_Result_Project/Dashboard1?publish=yes
+
+
+## Key Insights
+
+## Key Insights
+
+- **Dominant Party:** Tamilaga Vettri Kazhagam (TVK) emerged as the largest party, winning **108 seats**.
+- **Vote Share Leader:** TVK recorded the highest vote share at **35.08%**.
+- **Closest Contest:** **Tiruppattur** recorded the closest contest, with a winning margin of just **1 vote**.
+- **Largest Victory:** **Edappadi** recorded the largest victory, with a winning margin of **98,110 votes**.
+- **Highest Voter Turnout:** **Karur** recorded the highest voter turnout at **94.25%**.
+- **Lowest Voter Turnout:** **Palayamkottai** recorded the lowest voter turnout at **70.14%**.
+- **Vote Share vs Seat Share:** TVK received **16,990,810 votes**, representing **35.08% of the total vote share**, while winning **108 seats (46.15% of all seats)**. This indicates that TVK's share of seats was substantially higher than its share of votes.
