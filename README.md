@@ -30,6 +30,68 @@ The analysis aims to answer the following questions:
 - **GeoJSON** — Constituency-level spatial visualization
 - **AI-assisted extraction** — Converting the official election-results PDF into structured tabular data
 
+  ## Data Sources
+
+### Election Results Data
+
+The election results were sourced from the **Election Commission of India (ECI)** through the official Tamil Nadu Assembly Election 2026 detailed results PDF.
+
+The source contains constituency-level and candidate-level information, including:
+
+- Constituency number and name
+- Total electors
+- Candidate name
+- Gender, age and category
+- Political party
+- Election symbol
+- General votes
+- Postal votes
+- Total votes
+- Vote percentages
+- Constituency voter turnout
+
+The PDF covers all **234 Assembly Constituencies** in Tamil Nadu.
+
+### Constituency Boundary Data
+
+GeoJSON spatial data was used to visualize election results geographically at the Assembly Constituency level.
+
+The constituency boundary file was obtained from the following GitHub repository:
+
+**Repository:** `saisantoshv3/assemnbly_gis_files`
+
+**File:** `2026_assembly_election/tamil_nadu_S22/tamil_nadu.geojson`
+
+The GeoJSON file was connected to the election data in Tableau using the **Assembly Constituency Number** as the common geographic identifier.
+
+
+## Data Preparation & Cleaning
+
+The official election results were available in PDF format and required transformation into a structured dataset before analysis.
+
+The following steps were performed:
+
+1. **PDF Data Extraction**
+   - Used AI-assisted extraction to convert the official election-results PDF into structured tabular data.
+   - Organized candidate-level results and constituency turnout data into separate Excel worksheets.
+
+2. **Data Cleaning in Excel**
+   - Reviewed and standardized candidate and constituency information.
+   - Preserved both raw and cleaned candidate names for traceability.
+   - Checked numeric fields such as general votes, postal votes, total votes and vote percentages.
+   - Handled missing values, including blank values for NOTA records.
+
+3. **Data Validation**
+   - Verified that candidate total votes matched:
+     `General Votes + Postal Votes = Total Votes`
+   - Checked constituency coverage and data completeness.
+   - Used constituency number as the primary constituency identifier because constituency names are not always unique.
+
+4. **MySQL Preparation**
+   - Imported the cleaned candidate-level dataset into MySQL.
+   - Assigned appropriate data types for numerical and categorical fields.
+   - Performed additional SQL-based validation before starting the electoral analysis.
+
 ## Tableau Dashboard
 
 The interactive Tableau dashboard provides a constituency-level view of the Tamil Nadu Assembly Election 2026 results, including winning parties, voter turnout, winning margins, seat distribution, and vote share versus seat share.
