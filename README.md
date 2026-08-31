@@ -92,6 +92,26 @@ The following steps were performed:
    - Assigned appropriate data types for numerical and categorical fields.
    - Performed additional SQL-based validation before starting the electoral analysis.
 
+## Data Quality & Validation
+
+Data quality checks were performed at multiple stages before finalizing the analysis and dashboard.
+
+Key validation steps included:
+
+- Confirmed coverage of all **234 Assembly Constituencies**.
+- Verified the presence of NOTA records across all constituencies.
+- Checked that `General Votes + Postal Votes = Total Votes`.
+- Validated constituency numbers as the primary identifier to avoid issues caused by duplicate constituency names.
+- Verified winner and runner-up calculations generated through SQL.
+- Cross-verified the winners of **all 234 constituencies** against the original election-results PDF.
+- Investigated and corrected extraction discrepancies identified during source-level validation.
+- Re-ran the affected SQL analysis and refreshed the Tableau dashboard after corrections.
+
+### Validation Approach
+
+Automated checks such as row counts and vote-total reconciliation were combined with **source-level validation against the original PDF**.
+
+This was important because structural checks alone could confirm that the dataset was internally consistent, but could not guarantee that every record had been extracted correctly from the source document.
 ## Tableau Dashboard
 
 The interactive Tableau dashboard provides a constituency-level view of the Tamil Nadu Assembly Election 2026 results, including winning parties, voter turnout, winning margins, seat distribution, and vote share versus seat share.
