@@ -174,9 +174,45 @@ Constituency-level turnout data was analysed to identify:
 - Constituencies with the highest and lowest turnout
 
 
-
 ## Tableau Dashboard
 
-The interactive Tableau dashboard provides a constituency-level view of the Tamil Nadu Assembly Election 2026 results, including winning parties, voter turnout, winning margins, seat distribution, and vote share versus seat share.
+The analytical outputs were visualized in Tableau Public to create an interactive electoral analysis dashboard covering all 234 Assembly Constituencies.
+
+### Dashboard Features
+
+The dashboard includes:
+
+- **KPI Cards**
+  - Total Constituencies
+  - Average Voter Turnout
+  - Highest Voter Turnout
+  - Lowest Voter Turnout
+  - Closest Winning Margin
+
+- **Winning Party by Constituency Map**
+  - GeoJSON-based constituency map
+  - Constituencies coloured by winning party
+  - Interactive tooltips showing winner, runner-up, votes and winning margin
+  - Constituency search functionality
+
+- **Seats Won by Party**
+  - Comparison of the number of constituencies won by each party
+  - Interactive filtering of the constituency map
+
+- **Top 10 Closest Contests**
+  - Constituencies with the smallest winning margins
+
+- **Top 10 Largest Victories**
+  - Constituencies with the largest winning margins
+
+- **Vote Share vs Seat Share**
+  - Comparison between each party's percentage of total votes and percentage of seats won
+
+### Dashboard Preview
 
 ![Tamil Nadu Assembly Election 2026 Dashboard](images/tn_election_2026_dashboard.png)
+
+### Interactive Dashboard
+
+[View the Interactive Tableau Dashboard]
+https://public.tableau.com/app/profile/ganesan.a7009/viz/TN_Election_2026_Result_Project/Dashboard1?publish=yes
